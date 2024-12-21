@@ -1,0 +1,123 @@
+[
+    {
+      "calificacion": 5,
+      "comentario": "Excelente lugar, muy limpio y cómodo.",
+      "propiedad": 1,
+      "arrendatario": 1
+    },
+    {
+      "calificacion": 4,
+      "comentario": "Buena experiencia, aunque se puede mejorar.",
+      "propiedad": 2,
+      "arrendatario": 4
+    },
+    {
+      "calificacion": 3,
+      "comentario": "Aceptable, pero esperaba algo mejor.",
+      "propiedad": 3,
+      "arrendatario": 8
+    },
+    {
+      "calificacion": 5,
+      "comentario": "Un lugar perfecto, muy recomendable.",
+      "propiedad": 4,
+      "arrendatario": 11
+    },
+    {
+      "calificacion": 2,
+      "comentario": "No cumplió con lo esperado.",
+      "propiedad": 5,
+      "arrendatario": 12
+    },
+    {
+      "calificacion": 4,
+      "comentario": "Muy cómodo y bien ubicado.",
+      "propiedad": 6,
+      "arrendatario": 13
+    },
+    {
+      "calificacion": 3,
+      "comentario": "Adecuado, pero algo ruidoso.",
+      "propiedad": 7,
+      "arrendatario": 14
+    },
+    {
+      "calificacion": 5,
+      "comentario": "Todo fue excelente, superó mis expectativas.",
+      "propiedad": 8,
+      "arrendatario": 15
+    },
+    {
+      "calificacion": 4,
+      "comentario": "Buen lugar, pero con detalles menores.",
+      "propiedad": 9,
+      "arrendatario": 1
+    },
+    {
+      "calificacion": 3,
+      "comentario": "Aceptable para una estancia corta.",
+      "propiedad": 10,
+      "arrendatario": 4
+    },
+    {
+      "calificacion": 5,
+      "comentario": "Impecable, repetiría sin dudar.",
+      "propiedad": 2,
+      "arrendatario": 8
+    },
+    {
+      "calificacion": 4,
+      "comentario": "Muy funcional y cómodo.",
+      "propiedad": 3,
+      "arrendatario": 11
+    },
+    {
+      "calificacion": 2,
+      "comentario": "Faltó limpieza y mantenimiento.",
+      "propiedad": 4,
+      "arrendatario": 12
+    },
+    {
+      "calificacion": 4,
+      "comentario": "Buena relación calidad-precio.",
+      "propiedad": 5,
+      "arrendatario": 13
+    },
+    {
+      "calificacion": 3,
+      "comentario": "Regular, podría mejorar.",
+      "propiedad": 6,
+      "arrendatario": 14
+    },
+    {
+      "calificacion": 5,
+      "comentario": "Un lugar increíble, lo recomiendo mucho.",
+      "propiedad": 7,
+      "arrendatario": 15
+    },
+    {
+      "calificacion": 4,
+      "comentario": "Buen espacio para descansar.",
+      "propiedad": 8,
+      "arrendatario": 1
+    },
+    {
+      "calificacion": 3,
+      "comentario": "Adecuado pero con áreas de mejora.",
+      "propiedad": 9,
+      "arrendatario": 4
+    },
+    {
+      "calificacion": 5,
+      "comentario": "Muy buena experiencia, todo perfecto.",
+      "propiedad": 10,
+      "arrendatario": 8
+    },
+    {
+      "calificacion": 2,
+      "comentario": "La experiencia no fue satisfactoria.",
+      "propiedad": 1,
+      "arrendatario": 11
+    }
+  ]
+  

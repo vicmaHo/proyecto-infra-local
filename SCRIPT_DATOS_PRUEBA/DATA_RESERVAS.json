@@ -1,0 +1,33 @@
+[
+    {
+      "fecha_inicio": "2024-12-21",
+      "fecha_final": "2024-12-27",
+      "propiedad": 1,
+      "arrendatario": 1
+    },
+    {
+      "fecha_inicio": "2024-12-22",
+      "fecha_final": "2024-12-28",
+      "propiedad": 3,
+      "arrendatario": 3
+    },
+    {
+      "fecha_inicio": "2024-12-23",
+      "fecha_final": "2024-12-29",
+      "propiedad": 5,
+      "arrendatario": 4
+    },
+    {
+      "fecha_inicio": "2024-12-24",
+      "fecha_final": "2024-12-30",
+      "propiedad": 7,
+      "arrendatario": 6
+    },
+    {
+      "fecha_inicio": "2024-12-25",
+      "fecha_final": "2024-12-31",
+      "propiedad": 9,
+      "arrendatario": 8
+    }
+  ]
+  
