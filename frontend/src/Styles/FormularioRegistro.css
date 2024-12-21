@@ -1,0 +1,108 @@
+.login-containers {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nuevo: Contenedor para el logo */
+.logo-containers {
+  width: 100%;
+  display: flex;
+  /* Nuevo: Usar flexbox */
+  justify-content: center;
+  /* Nuevo: Centrar horizontalmente */
+  margin-bottom: 20px;
+}
+
+/* Nuevo: Estilos para el logo */
+.logo {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  /* Nuevo: Asegurar que la imagen se trate como un bloque */
+}
+
+.login-contents {
+  width: 100%;
+}
+
+.login-containers h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  /* Eliminamos el margen superior del título */
+  margin-bottom: 20px;
+}
+
+.formularios {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.formularios input   {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.formularios select{
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button-register {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  background-color: #63aa0e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /*centrar el boton*/
+  margin-top: 10px;
+  
+
+
+}
+
+.button-register:hover {
+  background-color: #0f4d1a;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/*Apartado donde se modifica las caracteristicas del hipervinculo*/
+.forgot-password a {
+  color: #446b71;
+  /* Cambia el color si lo prefieres */
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}

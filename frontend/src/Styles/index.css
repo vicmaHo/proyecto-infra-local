@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+
+  --white: #ffff;
+  --gray: #f7f7f79d;
+  --ziggurat: #bfdcdf;
+  --atlantis: #9ed23b;
+  --tarawera: #053b47;
+  --christi: #63aa0e;
+  --apple: #4c8c34;
+  --smalt-blue: #55878d;
+  --plantation: #2a6349;
+  --parsley: #0f4d1a;
+  --breaker-bay: #6ca2ac;
+  --blue-bayoux: #446b71;
+  --black: #000000;
+}

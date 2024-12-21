@@ -1,0 +1,80 @@
+
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: react-app
+    ports:
+      - "3000:3000"    
+    command: "npm run preview"
+    depends_on:
+      - api
+    networks:
+      - cocoon_network
+
+  api:
+    build:
+      context: ./backend
+    container_name: django_app
+    command: >
+      sh -c "python manage.py migrate &&
+              python manage.py collectstatic --noinput &&
+              python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    environment:
+      DEBUG: '1'
+      SECRET_KEY: 'your-secret-key' # llave secreta, idealmente cambiarla en producción
+      DJANGO_SETTINGS_MODULE: cocoonbackend.settings
+      DATABASE_URL: postgres://django_user:1234ch@db:5432/django_db
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - static_volume:/app/staticfiles  # Montar los archivos estáticos generados
+      - media_volume:/app/media
+    networks:
+      - cocoon_network
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: django_user
+      POSTGRES_PASSWORD: 1234ch
+      POSTGRES_DB: django_db
+    ports:
+      - "5433:5432" #  Expongo el puerto 5433 en el host (debido a conflictos con postgres local)
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - cocoon_network
+    healthcheck: # tiempo de espera para terminar la ejecución correcta de la base de datos
+      test: ["CMD-SHELL", "pg_isready -U django_user -d django_db"]
+      interval: 5s
+      retries: 5
+      
+  nginx: # servicio de nginx para redireccionar las peticiones de archivos
+    image: nginx:latest
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/app/staticfiles:ro
+      - media_volume:/app/media:ro
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - api
+    networks:
+      - cocoon_network
+
+
+volumes:
+  db_data:  # almacena los datos persistentes de la base de datos
+  static_volume:  # almacena archivos estáticos recolectados
+  media_volume: # almacena archivos de medios cargados
+
+networks:
+  cocoon_network:
+    driver: bridge

@@ -1,0 +1,308 @@
+/* Contenedor principal */
+.layout-details {
+  display: grid;
+  grid-template-rows: auto auto 1fr ;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  'sidebar' 
+  'main' 
+  'additional-info';
+  height: auto;
+  gap: 20px;
+  margin: 20px;
+}
+
+@media (min-width: 800px) {
+  .layout-details {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'sidebar main' 'additional-info additional-info'; 
+  }
+}
+
+.additional-info {
+  grid-area: additional-info;
+}
+
+
+.layout-details aside{
+  grid-area: sidebar;
+  background: #f8f8f8;
+}
+
+.layout-details main {
+  grid-area: main;
+  background-color: #f8f8f8;;
+}
+  
+  /* Textos principales */
+  
+  .name-propiedad-details {
+    font: Helvetica neue;
+    font-size: calc(var(--text-size) * 2);
+    color: #000000;
+    margin:0;
+  }
+  
+  .text-precio {
+    display:flex;
+    align-items: center;
+    font-size: calc(var(--text-size) * 2);
+    color: #0055FB;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .text-precio-mes{
+
+    font-size: calc(var(--text-size) );
+    margin-bottom: 5px;
+    color: #0055FB;
+  }
+    
+  
+  /* Contenedor de la imagen */
+  .image-container {
+    background-color: #f8f8f8;
+    display: block; /* Cambiar de flex a block */
+    width: 100%;    /* Asegura que ocupe todo el ancho del área del grid */
+  }
+  
+  /* Estilo de la imagen */
+  .image-container img {
+    background-color: #f8f8f8;
+    width: 100%;      /* La imagen se ajusta al 100% del contenedor */
+    height: auto;     /* Mantener la relación de aspecto */
+    border-radius: 10px;
+    border: 2px solid #ddd;
+  }
+  .texto-subtitulo{
+    font-size: (20px);
+    margin: 0;
+    margin-bottom: 4px;
+    color: #000000;
+  }
+  .button-reserva {
+    background-color: #0055FB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: var(--text-size);
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .name-propietario{
+    font-size: (18px);
+    color: #000000;
+    margin-left: 20px;
+    
+
+  }
+  .box-servicios{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+  }
+  .button-servicios{
+    background-color: #ffffff;
+    font-style: italic;
+    font-weight: bold;
+    font-size: (20px);
+    color: rgb(126, 126, 126);
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .button-reserva:hover {
+    background-color: #003bbf;
+    transform: scale(1.05);
+  }
+
+.principal-info {
+    background: #9b9b9b13;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Títulos más pequeños */
+    gap: 15px 30px; /* Espaciado entre filas y columnas */
+}
+
+.info-item {
+  display: contents; /* Usa grid directo en los hijos */
+}
+
+.info-title {
+  font-weight: bold;
+  text-align: left;
+}
+
+.info-content {
+  text-align: right;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column; /* Apila los elementos (línea arriba, título abajo) */
+  align-items: flex-start; /* Alinea todo a la izquierda */
+  margin-bottom: 20px; /* Espaciado entre el título y otros elementos */
+}
+
+.title-divider {
+  width: 120px; /* Ancho de la línea */
+  height: 4px; /* Grosor de la línea */
+  background-color: #0055FB; /* Color de la línea */
+  border-radius: 2px; /* Bordes redondeados */
+  margin-bottom: 8px; /* Espaciado entre la línea y el título */
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin: 0; /* Elimina márgenes para mejor control del espaciado */
+}
+.rules-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dos columnas dinámicas */
+  gap: 10px; /* Espacio entre los elementos */
+  padding: 0; /* Elimina el padding por defecto del `<ul>` */
+  list-style-type: none; /* Elimina los puntos por defecto */
+}
+
+.rules-list li {
+  font-style: bold; /* Texto en negrita */
+  font-size: (16px); /* Ajusta el tamaño del texto */
+  color: #000000; /* Color del texto */
+  background: #0054fb10; /* Fondo claro para destacar */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid #0055FB; /* Borde opcional para separar visualmente */
+}
+.landlord-card {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px solid #ddd; /* Borde gris */
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  gap: 20px; /* Espacio entre imagen y texto */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin-bottom: 20px; /* Separación con otros elementos */
+}
+
+.landlord-image {
+  width: 100px; /* Tamaño de la imagen */
+  height: 100px;
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+  border: 3px solid #0055FB; /* Borde azul */
+}
+
+.landlord-info {
+  display: flex;
+  flex-direction: column; /* Elementos apilados verticalmente */
+  gap: 5px; /* Espacio entre los elementos */
+}
+
+.landlord-name {
+  font-size: calc(var(--text-size) * 2);
+  font-weight: bold;
+  color: #333; /* Color del texto */
+  margin: 0; /* Elimina márgenes */
+}
+
+.landlord-rating {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacio entre el texto y la calificación */
+}
+
+.landlord-registered {
+  font-size: 14px;
+  color: #777;
+  font-style: italic; /* Texto en cursiva */
+}
+.button-contact {
+  background-color: #0055FB;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: (20px);
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button-contact:hover {
+  background-color: #003bbf;
+  transform: scale(1.05);
+}
+
+.reviews-section {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-title {
+  font-size: (24px);
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.property-details {
+  display: grid;
+  grid-template-areas:
+    "main main"
+    "reviews reviews";
+  grid-gap: 20px;
+}
+
+.reviews-section {
+  grid-area: reviews;
+}
+
+
+.button-reserva {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-reserva:hover {
+  background-color: #0056b3;
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e8f5e9;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+}
+
+.confirmation-message h3 {
+  margin: 0;
+  color: #388e3c;
+}
+
+.confirmation-message p {
+  margin: 5px 0;
+  color: #2e7d32;
+}

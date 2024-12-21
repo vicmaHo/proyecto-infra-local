@@ -1,0 +1,53 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(241, 238, 238, 0.904);  /* Fondo oscuro translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Asegura que esté sobre otros elementos */
+  }
+  
+  
+  .modal-small {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px;  /* Ajusta el tamaño del modal */
+    box-shadow: 0 0 20px rgba(36, 35, 35, 0.932);  /* Sombra para efecto superpuesto */
+    text-align: center;
+    position: relative;
+    z-index: 1001;  /* Superior al fondo oscuro */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 100px;
+    right: 670px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;  /* Color del botón de cierre */
+  }
+  
+.h3-modal {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;  /* Título en color oscuro */
+  }
+  
+.ul-modal {
+    list-style: none;
+    padding: 0;
+  }
+  
+.li-modal {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+  

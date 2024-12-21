@@ -1,0 +1,17 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+    --text-size: 16px; /* Valor predeterminado */
+  }
+  
+  body {
+    font-size: var(--text-size);
+  }
+  
+  h1, h2, h3, p, a, button, input,textarea {
+    font-size: var(--text-size);
+  }
+  span{
+    font-size: calc(var(--text-size) * 1.5);
+  }
+  

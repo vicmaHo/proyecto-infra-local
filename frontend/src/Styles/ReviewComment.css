@@ -1,0 +1,17 @@
+.review-comment p {
+    font-size: (14px);
+    color: #333;
+    text-align: justify;
+  }
+  
+  .read-more {
+    color: #0055FB;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
