@@ -70,7 +70,7 @@ Jhon Alejandro Martínez - 2259565
     - **Backend**: Disponible en <http://localhost:8000> (si se configuró en el puerto 8000).
     - **Base de Datos**: Disponible en localhost:5433 para conectarse desde herramientas externas.
 
-3. Opcionalmente se encuentra disponible en la carpeta *SCRIPT_DATOS_PRUEBA* un script en python que llenara la BD con algunos datos de prueba para poder comenzar a trabajar con ellos. Ejecutar el archivo llenar_bd_script.py
+3. Opcionalmente se encuentra disponible en la carpeta *SCRIPT_DATOS_PRUEBA* un script en python que llenara la BD con algunos datos de prueba para poder comenzar a trabajar con ellos. **Ejecutar el archivo llenar_bd_script.py cuando se este ejecutando el backend**, ya que este funciona realizando peticiones para ingresar los datos, **ademas si se modifico el puerto de ejecución del backend se debe modificar la variable `API_URL` dentro del script.**
 
     ```bash
     cd SCRIPT_DATOS_PRUEBA # dirigirse a la carpeta
