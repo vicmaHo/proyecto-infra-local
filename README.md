@@ -44,11 +44,11 @@ Jhon Alejandro Martínez - 2259565
 
     Configuración de url de ejecución el backend en variables de entorno del frontend especificadas en el archivo **.env**
 
-    ```json
+    ```plain
     VITE_API_URL="http://localhost:8000" 
     ```
 
-    Configuración de variables de entorno en el backend especificadas en el archivo **.env**
+    Configuración de variables de entorno en el backend especificadas en el archivo **.env**, dentro de estas se encuentran las variables de credenciales del correo que se usará para enviar notificaciones de reserva o de recuperación de contraseña, en caso de no configurarse estas credenciales se retorna un mensaje de error pero no interrumpe el flujo de la aplicación.
 
     ```plain
     MAIL_PASS_COCOON_PROJECT='password'
@@ -71,6 +71,8 @@ Jhon Alejandro Martínez - 2259565
     - **Base de Datos**: Disponible en localhost:5433 para conectarse desde herramientas externas.
 
 3. Opcionalmente se encuentra disponible en la carpeta *SCRIPT_DATOS_PRUEBA* un script en python que llenara la BD con algunos datos de prueba para poder comenzar a trabajar con ellos. **Ejecutar el archivo llenar_bd_script.py cuando se este ejecutando el backend**, ya que este funciona realizando peticiones para ingresar los datos, **ademas si se modifico el puerto de ejecución del backend se debe modificar la variable `API_URL` dentro del script.**
+
+    **Es importante que este script se ejecute antes de ingresar cualquier dato dentro de la aplicación ya que las llaves foráneas son fijas y por tanto pueden generarse conflictos con datos ya existentes.**
 
     ```bash
     cd SCRIPT_DATOS_PRUEBA # dirigirse a la carpeta

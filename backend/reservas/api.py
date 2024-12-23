@@ -5,6 +5,8 @@ from django.db import transaction
 
 from django.core.mail import send_mail
 from django.conf import settings
+from rest_framework.response import Response
+from rest_framework import status
 
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
@@ -56,7 +58,11 @@ class ReservaViewSet(viewsets.ModelViewSet):
                     propiedad.save()
                 else:
                     raise Exception("La propiedad no está disponible para reservar.")
-        # Enviar correo al arrendador
+             # Intentar enviar correo
+        self.enviar_correo_notificacion(reserva)
+    
+    def enviar_correo_notificacion(self, reserva):
+        propiedad = reserva.propiedad
         arrendador = propiedad.arrendador
         mensaje = (
             f"Hola {arrendador.usuario.user.first_name} {arrendador.usuario.user.last_name},\n\n"
@@ -70,10 +76,32 @@ class ReservaViewSet(viewsets.ModelViewSet):
             f"- Fecha de fin: {reserva.fecha_final}\n\n"
             "Saludos,\nCoccon Home Team."
         )
-        send_mail(
-            subject="Nueva reserva realizada",
-            message=mensaje,
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[arrendador.usuario.user.email],  # Correo del arrendador
-            fail_silently=False,
-        )
+        
+        try:
+            send_mail(
+                subject="Nueva reserva realizada",
+                message=mensaje,
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[arrendador.usuario.user.email],  # Correo del arrendador
+                fail_silently=False,
+            )
+            return None  # Éxito
+        except Exception as e:
+            return str(e)  # Devuelve el mensaje de error
+    
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        # Llamar a perform_create para manejar lógica de negocio
+        self.perform_create(serializer)
+        
+        # Intentar enviar correo
+        error_correo = self.enviar_correo_notificacion(serializer.instance)
+        
+        # Preparar respuesta
+        response_data = serializer.data
+        if error_correo:
+            response_data['error_correo'] = error_correo
+        
+        return Response(response_data, status=status.HTTP_201_CREATED)
