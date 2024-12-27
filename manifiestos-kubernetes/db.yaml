@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: postgres-db
+        image: postgres:15
+        env:
+        - name: POSTGRES_USER
+          value: "django_user"
+        - name: POSTGRES_PASSWORD
+          value: "1234ch"
+        - name: POSTGRES_DB
+          value: "django_db"
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: db-data2
+          mountPath: /data/postgres
+        livenessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - django_user
+            - -d
+            - django_db
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: db-data2
+        persistentVolumeClaim:
+          claimName: db-data2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+spec:
+  selector:
+    app: db
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
+  type: ClusterIP

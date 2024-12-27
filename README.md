@@ -4,6 +4,8 @@
 
 Este proyecto utiliza Docker Compose para desplegar los servicios requeridos localmente. Incluye servicios como el backend, implementado usando Django Rest-Framework, base de datos Postgres, y frontend implementado en React con Vite, permitiendo la comunicación entre backend-base de datos y backend-frontend. Adicionalmente se agrega un servicio Nginx para servir los archivos estáticos y de medios (fotos y videos cargados) que contenga la aplicación.
 
+Adicionalmente también se presenta el despliegue en la nube con el servicio GKE (Google Kubernetes Engine), en este contexto se hace uso del orquestador kubernetes para disponer los despliegues como la base de datos, el backend y el frontend.
+
 ## Integrantes
 
 Víctor Manuel Hernández - 2259520
@@ -16,7 +18,7 @@ Juan Miguel Posso - 2259610
 
 Jhon Alejandro Martínez - 2259565
 
-## Configuración Inicial
+## Configuración Inicial - Despliegue local con docker-compose
 
 1. Es necesario contar con docker y docker compose instalados
     - [Docker](https://www.docker.com/get-started)
@@ -57,7 +59,7 @@ Jhon Alejandro Martínez - 2259565
     FRONTEND_URL=http://localhost:3000 
     ```
 
-## Instrucciones de ejecución
+## Instrucciones de ejecución - Despliegue local
 
 1. Construir los contenedores con docker compose
 
@@ -86,3 +88,25 @@ Jhon Alejandro Martínez - 2259565
 La documentación de la API del backend hecha con OpenAPI (Swagger) se encontrará disponible una vez levantado el servicio, en el endpoint **/api/schema/swagger-ui**
 
 **Documentación completa de la api**: Disponible en <http://localhost:8000/api/schema/swagger-ui/> (si configuró el puerto 8000)
+
+## Configuración para despliegue en la nube con Kubernetes
+
+1. Elección de un servicio para despliegue de contenedores, en este caso GKE
+2. Crear un Cluster
+3. Conectarse a dicho Cluster para ejecutar comandos, en este caso mediante la shell de Google Cloud
+4. Ejecutar los manifiestos
+
+    ```yaml
+    kubectl apply -f pvc.yaml
+    kubectl apply -f db.yaml
+    kubectl apply -f api.yaml
+    kubectl apply -f frontend.yaml
+    ```
+
+### Enlaces de la aplicación desplegada en GKE
+
+**API:** <http://34.31.232.213/>
+
+**API Documentación en OpenAPI/Swagger:** <http://34.31.232.213/api/schema/swagger-ui/>
+
+**Frontend:** <http://35.184.196.156/>
