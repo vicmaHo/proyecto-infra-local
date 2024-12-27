@@ -8,15 +8,15 @@ Adicionalmente también se presenta el despliegue en la nube con el servicio GKE
 
 ## Integrantes
 
-Víctor Manuel Hernández - 2259520
+Víctor Manuel Hernández - 2259520 - Grupo 50
 
-Esteban Revelo - 2067507
+Esteban Revelo - 2067507 - Grupo 50
 
-Nicolas Mauricio Rojas - 2259460
+Nicolas Mauricio Rojas - 2259460 - Grupo 51
 
-Juan Miguel Posso - 2259610
+Juan Miguel Posso - 2259610 - Grupo 50
 
-Jhon Alejandro Martínez - 2259565
+Jhon Alejandro Martínez - 2259565 - Grupo 50
 
 ## Configuración Inicial - Despliegue local con docker-compose
 
